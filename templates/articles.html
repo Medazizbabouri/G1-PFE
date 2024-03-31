@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f3ef;
+        }
+        h2 {
+            text-align: left;
+            color: dodgerblue;
+            margin-top: 40px;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Articles</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Summary</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in Articles %}
+                <tr>
+                    <td>{{ article.title }}</td>
+                    <td>{{ article.summary }}</td>
+                    <td><a href="{{ article.link }}">Read More</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
